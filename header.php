@@ -1,3 +1,22 @@
+<!-- Функция отправки почты -->
+<?php
+
+      if (!empty( $_POST['phone'])) {
+        $phone = $_POST['phone'];
+        $message = $_POST['message'];
+
+        mail(
+          // "reception@appolo.com",
+          'mirfaizievoleg@gmail.com',
+          "новая запись на прием",
+          sprintf("телефон: %s", $phone)
+        );
+      }
+    ?>
+
+
+
+
 <?php
 /**
  * Header template for the theme
@@ -109,6 +128,10 @@
 								<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#exampleModalCenter">Записаться на прием</button>
 							</p>
 						</div>
+
+
+            <!-- Всплывающее окно -->
+
 						<!-- Button trigger modal -->
 						<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   					Запустить модальное окно
@@ -126,16 +149,27 @@
   							</div>
   							<div class="modal-body">
 
-  								<form method="POST" action="/"> 
+
+<!-- Твой старый вариант -->
+                  <form method="POST" action="/"> 
+                    phone:<input type="text" name="phone" /> <br/>
+                    text: <textarea name="message"></textarea>
+                    <input type="submit" />
+                  </form>
+
+
+<!-- Красивый вариант всплывающего окна -->
+
+  								<!-- <form method="POST" action="/"> 
   									<div class="row">
   										<div class="col-4">
   											<p class="text-left">Ваш телефон: </p>
   											<p class="text-left">Дата посещения:</p>
   											<p class="text-left">В какое отделение:</p>
-  											<p class="text-left">К какому Специалисту:</p> 
+  											<p class="text-left">К какому Специалисту:</p>  -->
 
   											<!-- <input type="submit" /> -->
-  										</div>
+  										<!-- </div>
   										<div class="col">
   											<p class="text-left"><input type="text" name="phone"/></p>
   											<p class="text-left"><input type="text" name="date" /></p>
@@ -144,7 +178,7 @@
   										</div>
   									</div>
   									<p class="text-left">Tекст: <textarea name="message" placeholder="Введите дополнительную информацию о цели Вашего визита"></textarea></p>
-  								</form>
+  								</form> -->
   							</div>
 
   							<div class="modal-footer">
