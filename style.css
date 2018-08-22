@@ -1,0 +1,93 @@
+/*
+Theme Name:     Apollo
+Theme URI:      http: //example.com/
+Description:    Дочерняя тема для темы Twenty Eleven
+Author:         monk
+Author URI:     http: //example.com/about/
+Template:       twentyeleven
+Version:        0.1
+*/
+@import url("../twentyeleven/style.css");
+
+@import url("./assets/css/my_local_fonts.css");
+
+/* my css
+------------------------------------------------*/
+body {
+  background: #fff;
+}
+
+#supplementary {
+  /*border-top: 1px solid #ddd;*/
+  /*padding: 1.625em 7.6%;*/
+  padding-top: 1.625em;
+  padding-right: 5.6%;
+  padding-bottom: 0;
+  padding-left: 5.6%;
+  overflow: hidden;
+  background-color: #007bff;
+}
+
+.row {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.nav-item > a {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0em;
+  color: #fff;
+  margin-right: 15px;
+}
+
+#menu-headermenu ul li.current-menu-item a{
+  background-color: #7FC9FF;
+  text-decoration:none;
+  list-style-type: none;
+}
+
+#menu-headermenu li.current-menu-item a{
+  background-color: #7FC9FF;
+  text-decoration:none;
+  list-style-type: none;
+}
+
+ul.sub-menu {
+  display: none;
+}
+
+ul.navbar-nav li:hover > ul.sub-menu {
+  display: block;
+  text-decoration:none;
+  list-style-type: none;
+}
+
+#content{
+  margin: 0 0 0 0;
+}
+
+#searchform{
+  background-color: #ffffff;
+}
+
+.widget-title{
+  color: #ffffff;
+  padding-right: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+#menu-headermenu ul li.current-menu-item a{
+  background-color: #7FC9FF;
+  text-decoration:none;
+  list-style-type: none;
+}
+
+li.current-menu-item a{
+  background-color: #7FC9FF;
+  text-decoration:none;
+  list-style-type: none;
+}
