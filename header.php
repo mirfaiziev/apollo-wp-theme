@@ -1,23 +1,47 @@
 <!-- Функция отправки почты -->
 <?php
-
       if (!empty( $_POST['phone'])) {
-        $phone = $_POST['phone'];
-        $message = $_POST['message'];
-
+         $phone =  sprintf("Телефон: %s;\n", $_POST['phone']);
+  $contactName = sprintf("ФИО: %s;\n", $_POST['contactName']);
+  $date = sprintf("Дата: %s,\n", $_POST['date']);
+  $service = sprintf("Отделение: %s;\n", $_POST['service']);
+  $specialist = sprintf("Врач: %s;\n", $_POST['specialist']);
+  $message = sprintf("Дополнительно: %s", $_POST['message']);
         wp_mail(
           // "reception@appolo.com",
           'mirfaizievoleg@gmail.com',
           "новая запись на прием",
-          sprintf("телефон: %s", $phone)
+          $contactName.$phone.$date. $service.$specialist.$message
         );
       }
     ?>
+ 
 
 
 
+
+
+<!-- <?php
+
+if(isset($_POST['submit'])) {
+
+  $phone =  sprintf("Телефон: %s;\n", $_POST['phone']);
+  $contactName = sprintf("ФИО: %s;\n", $_POST['contactName']);
+  $date = sprintf("Дата: %s,\n", $_POST['date']);
+  $service = sprintf("Отделение: %s;\n", $_POST['service']);
+  $specialist = sprintf("Врач: %s;\n", $_POST['specialist']);
+  $message = sprintf("Дополнительно: %s", $_POST['message']);
+  
+  wp_mail(
+    'mirfaizievoleg@gmail.com',
+    'Запись на прием',
+    $contactName.$phone.$date. $service.$specialist.$message
+  );
+}
+?> -->
 
 <?php
+
 /**
  * Header template for the theme
  *
@@ -130,19 +154,14 @@
 						</div>
 
 
-            <!-- Всплывающее окно -->
-
-						<!-- Button trigger modal -->
-						<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  					Запустить модальное окно
-  				</button> -->
+            
 
   				<!-- Modal -->
   				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   					<div class="modal-dialog modal-dialog-centered" role="document">
   						<div class="modal-content">
   							<div class="modal-header">
-  								<h5 class="modal-title" id="exampleModalLongTitle">Записатся на прием</h5>
+  								<h5 class="modal-title" id="exampleModalLongTitle">Записаться на прием</h5>
   								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
   									<span aria-hidden="true">&times;</span>
   								</button>
@@ -150,108 +169,109 @@
   							<div class="modal-body">
 
 
-<!-- Твой старый вариант -->
+                  <!-- Твой старый вариант -->
                   <form method="POST" action="/"> 
-                    phone:<input type="text" name="phone" /> <br/>
-                    text: <textarea name="message"></textarea>
+                    <div class="row">
+                      <div class="col-4">
+                        <p class="text-left">Фамилия И.О.*: </p>
+                        <p class="text-left">Ваш телефон*: </p>
+                        <p class="text-left">Дата посещения*:</p>
+                        <p class="text-left">В какое отделение:</p>
+                        <p class="text-left">К какому Специалисту:</p> 
+                      </div>
+
+                      <div class="col">
+                        <p class="text-left"><input type="text" name="contactName" required="true" /></p>
+                        <p class="text-left"><input type="text" name="phone" required="true" /></p>
+                        <p class="text-left"><input type="text" name="date" /></p>
+                        <p class="text-left"><input type="text" name="service"/></p>
+                        <p class="text-left"><input type="text" name="specialist" ></p>
+                      </div>
+                  </div>
+
+                  <p class="text-left">Дополнительная информация: <textarea name="message" ?"></textarea></p>
+                   
                     <input type="submit" />
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
                   </form>
 
 
-<!-- Красивый вариант всплывающего окна -->
 
-  								<!-- <form method="POST" action="/"> 
-  									<div class="row">
-  										<div class="col-4">
-  											<p class="text-left">Ваш телефон: </p>
-  											<p class="text-left">Дата посещения:</p>
-  											<p class="text-left">В какое отделение:</p>
-  											<p class="text-left">К какому Специалисту:</p>  -->
+                                   
 
-  											<!-- <input type="submit" /> -->
-  										<!-- </div>
-  										<div class="col">
-  											<p class="text-left"><input type="text" name="phone"/></p>
-  											<p class="text-left"><input type="text" name="date" /></p>
-  											<p class="text-left"><input type="text" name="service" /></p>
-  											<p class="text-left"><input type="text" name="specialist" /></p>
-  										</div>
-  									</div>
-  									<p class="text-left">Tекст: <textarea name="message" placeholder="Введите дополнительную информацию о цели Вашего визита"></textarea></p>
-  								</form> -->
-  							</div>
+               
 
-  							<div class="modal-footer">
-  								<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
-  								<button type="button" class="btn btn-primary">Отправить</button>
-  							</div>
-  						</div>
-  					</div>
-  				</div>
+              </div>
 
 
-  				<div class="col-sm-4" >
-  					<p>
-  						+38 (044) 123-4567 <br>
-  						+38 (050) 123-4567 <br>
-  						+38 (067) 123-4567 <br>						
-  					</p>	
-  				</div>
-  			</div> <!-- class = "row" -->
-  		</div>
-  		</div>
-  	
-
-  		<div class="row" >
-  		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-
-  			<div class="col" style="background: url('<?php echo  get_stylesheet_directory_uri(); ?>/images/headers/med-thumbnail.jpg') no-repeat; background-size: 100%;">
-  				<div class="col" id = "we" align = "right">					
-  					<br>
-  					<br>
-  					<br>
-  					<p><img src="<?php echo  get_stylesheet_directory_uri(); ?>/images/apollo.png" class="img-fluid" alt="" width="30%" alt="Responsive image"></p>
-  					<h3 class = "text-primary">Мы позаботимся </h3>
-  					<h3 class = "text-primary">о Вашем здоровье</h3>
-
-  					<h5 class = "text-primary">Аполло предоставляет полный спектр</h5> 
-  					<h5 class = "text-primary">медицинского обслуживания</h5>
-  					<br>
-  					<br>
-  				</div>
-  			</div>
-
-  		</a>
-  		</div>
-
-  	</div><!-- </header> -->
+            </div>
+          </div>
+        </div>
 
 
-  <nav role="navigation" class = "navbar navbar-expand-lg navbar-light bg-primary border-primary sticky-top border-top ">
-  	<button 
-  	class="navbar-toggler" 
-  	type="button" 
-  	data-toggle="collapse" 
-  	data-target="#navbarSupportedContent" 					
-  	area-label="Toggel navigation">
-  	<span class="navbar-toggler-icon"></span>
-  </button>
-  <?php /* Our navigation menu. If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn't assigned, the menu with the lowest ID is used. */ ?>
+        <div class="col-sm-4" >
+         <p>
+          +38 (044) 123-4567 <br>
+          +38 (050) 123-4567 <br>
+          +38 (067) 123-4567 <br>						
+        </p>	
+      </div>
+    </div> <!-- class = "row" -->
+  </div>
+</div>
 
-  <?php wp_nav_menu( array( 
+
+<div class="row" >
+  <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+
+   <div class="col" style="background: url('<?php echo  get_stylesheet_directory_uri(); ?>/images/headers/med-thumbnail.jpg') no-repeat; background-size: 100%;">
+    <div class="col" id = "we" align = "right">					
+     <br>
+     <br>
+     <br>
+     <p><img src="<?php echo  get_stylesheet_directory_uri(); ?>/images/apollo.png" class="img-fluid" alt="" width="30%" alt="Responsive image"></p>
+     <h3 class = "text-primary">Мы позаботимся </h3>
+     <h3 class = "text-primary">о Вашем здоровье</h3>
+
+     <h5 class = "text-primary">Аполло предоставляет полный спектр</h5> 
+     <h5 class = "text-primary">медицинского обслуживания</h5>
+     <br>
+     <br>
+   </div>
+ </div>
+
+</a>
+</div>
+
+</div><!-- </header> -->
+
+
+<nav role="navigation" class = "navbar navbar-expand-lg navbar-light bg-primary border-primary sticky-top border-top ">
+ <button 
+ class="navbar-toggler" 
+ type="button" 
+ data-toggle="collapse" 
+ data-target="#navbarSupportedContent" 					
+ area-label="Toggel navigation">
+ <span class="navbar-toggler-icon"></span>
+</button>
+<?php /* Our navigation menu. If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn't assigned, the menu with the lowest ID is used. */ ?>
+
+<?php wp_nav_menu( array( 
 				// 'theme_location' => 'primary', 
-  	'container_class' => 'navbar-collapse collapse ',
-  	'container_id' => 'navbarSupportedContent',
-  	'menu_class' => 'navbar-nav mr-auto', 
-  ) ); ?>
+ 'container_class' => 'navbar-collapse collapse ',
+ 'container_id' => 'navbarSupportedContent',
+ 'menu_class' => 'navbar-nav mr-auto', 
+) ); ?>
 
 
-  <h3 class = 'main-nav-search'>ПОИСК</h3>
-  <form method="get" id="searchform" action="http://localhost/">
-  	<label for="s" class="assistive-text">Search</label>
-  	<input class="field" name="s" id="s" placeholder="Поиск" type="text">
-  	<input class="submit" name="submit" id="searchsubmit" value="Поиск" type="submit">
-  </form>
+<h3 class = 'main-nav-search'>ПОИСК</h3>
+<form method="get" id="searchform" action="http://localhost/">
+ <label for="s" class="assistive-text">Search</label>
+ <input class="field" name="s" id="s" placeholder="Поиск" type="text">
+ <input class="submit" name="submit" id="searchsubmit" value="Поиск" type="submit">
+</form>
 </nav>
 
 
