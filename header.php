@@ -5,7 +5,7 @@
         $phone = $_POST['phone'];
         $message = $_POST['message'];
 
-        mail(
+        wp_mail(
           // "reception@appolo.com",
           'mirfaizievoleg@gmail.com',
           "новая запись на прием",
@@ -246,7 +246,7 @@
   ) ); ?>
 
 
-  <h3 class = 'widget-title'>ПОИСК</h3>
+  <h3 class = 'main-nav-search'>ПОИСК</h3>
   <form method="get" id="searchform" action="http://localhost/">
   	<label for="s" class="assistive-text">Search</label>
   	<input class="field" name="s" id="s" placeholder="Поиск" type="text">

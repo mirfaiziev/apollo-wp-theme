@@ -1,44 +1,4 @@
 <?php
-/* ========================================================================================= */
-function apollo_widgets_init()
-{
-    // unregisterd sidebar from parent theme
-    unregister_sidebar('sidebar-1');
-
-    // initialize same sidebar but with another class
-    register_sidebar(
-         array(
-             'name'          => __( 'Main Sidebar', 'apollo' ),
-             'id'            => 'sidebar-1',
-             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-             'after_widget'  => '</aside>',
-             'before_title'  => '<h3 class="widget-title text-primary">',
-             'after_title'   => '</h3>',
-         )
-    );
-
-}
-add_action( 'widgets_init', 'apollo_widgets_init', 11);
-
-/* ========================================================================================= */
-function remove_specific_widget( $sidebars_widgets ) {
-
-    foreach( $sidebars_widgets as $widget_area => $widget_list ){
-
-        foreach( $widget_list as $pos => $widget_id ){
-
-            if ( $widget_id == 'search-2'){
-                unset( $sidebars_widgets[$widget_area][$pos] );
-            }
-        }
-    }
-
-    return $sidebars_widgets;
-}
-
-add_filter( 'sidebars_widgets', 'remove_specific_widget' );
-
-
 
 
 /* ========================================================================================= */
