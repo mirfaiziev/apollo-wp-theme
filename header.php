@@ -15,30 +15,6 @@
         );
       }
     ?>
- 
-
-
-
-
-
-<!-- <?php
-
-if(isset($_POST['submit'])) {
-
-  $phone =  sprintf("Телефон: %s;\n", $_POST['phone']);
-  $contactName = sprintf("ФИО: %s;\n", $_POST['contactName']);
-  $date = sprintf("Дата: %s,\n", $_POST['date']);
-  $service = sprintf("Отделение: %s;\n", $_POST['service']);
-  $specialist = sprintf("Врач: %s;\n", $_POST['specialist']);
-  $message = sprintf("Дополнительно: %s", $_POST['message']);
-  
-  wp_mail(
-    'mirfaizievoleg@gmail.com',
-    'Запись на прием',
-    $contactName.$phone.$date. $service.$specialist.$message
-  );
-}
-?> -->
 
 <?php
 
