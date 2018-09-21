@@ -243,7 +243,7 @@
 
 
 <h3 class = 'main-nav-search'>ПОИСК</h3>
-<form method="get" id="searchform" action="http://localhost/">
+<form method="get" id="searchform" action="/">
  <label for="s" class="assistive-text">Search</label>
  <input class="field" name="s" id="s" placeholder="Поиск" type="text">
  <input class="submit" name="submit" id="searchsubmit" value="Поиск" type="submit">
