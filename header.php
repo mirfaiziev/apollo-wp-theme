@@ -172,12 +172,6 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
                   </form>
 
-
-
-                                   
-
-               
-
               </div>
 
 
