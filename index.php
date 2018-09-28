@@ -13,8 +13,11 @@
  */
 
 get_header(); ?>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7c692eeac6f55fced4f96451302b823a3c2d7f6a
 		<div id="primary">
 			<div id="content" role="main">
 

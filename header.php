@@ -75,6 +75,7 @@
 				<div class="col-md-3" ><br><img src="<?php echo  get_stylesheet_directory_uri(); ?>/images/logo_apollo.png" class="img-fluid" alt="Responsive image">
         </div>
 				
+<<<<<<< HEAD
 				
 					
 
@@ -89,6 +90,63 @@
                 ldc@apollo.kiev.ua.<br>      <br>
                 Режим роботи: пн.-пт. з 8-00 год. до 20-00 год.          
               </p>
+=======
+				<div class="col-md-9">
+					<div class="row" align = "right">
+						<div class="col-sm-8">
+							<p align = "right">
+								<br>
+								<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#exampleModalCenter">Записаться на прием</button>
+							</p>
+						</div>
+
+
+            
+
+  				<!-- Modal -->
+  				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  					<div class="modal-dialog modal-dialog-centered" role="document">
+  						<div class="modal-content">
+  							<div class="modal-header">
+  								<h5 class="modal-title" id="exampleModalLongTitle">Записаться на прием</h5>
+  								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  									<span aria-hidden="true">&times;</span>
+  								</button>
+  							</div>
+  							<div class="modal-body">
+
+
+                  <!-- Твой старый вариант -->
+                  <form method="POST" action="/"> 
+                    <div class="row">
+                      <div class="col-4">
+                        <p class="text-left">Фамилия И.О.*: </p>
+                        <p class="text-left">Ваш телефон*: </p>
+                        <p class="text-left">Дата посещения*:</p>
+                        <p class="text-left">В какое отделение:</p>
+                        <p class="text-left">К какому Специалисту:</p> 
+                      </div>
+
+                      <div class="col">
+                        <p class="text-left"><input type="text" name="contactName" required="true" /></p>
+                        <p class="text-left"><input type="text" name="phone" required="true" /></p>
+                        <p class="text-left"><input type="text" name="date" /></p>
+                        <p class="text-left"><input type="text" name="service"/></p>
+                        <p class="text-left"><input type="text" name="specialist" ></p>
+                      </div>
+                  </div>
+
+                  <p class="text-left">Дополнительная информация: <textarea name="message" ?"></textarea></p>
+                   
+                    <input type="submit" />
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                  </form>
+
+              </div>
+
+
+>>>>>>> 7c692eeac6f55fced4f96451302b823a3c2d7f6a
             </div>
            
        
@@ -139,7 +197,11 @@
 ) ); ?>
 
 
+<<<<<<< HEAD
 
+=======
+<h3 class = 'main-nav-search'>ПОИСК</h3>
+>>>>>>> 7c692eeac6f55fced4f96451302b823a3c2d7f6a
 <form method="get" id="searchform" action="/">
  <label for="s" class="assistive-text">Search</label>
  <input class="field" name="s" id="s" placeholder="Поиск по сайту" type="text">
