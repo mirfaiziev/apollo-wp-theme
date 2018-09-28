@@ -1,21 +1,3 @@
-<!-- Функция отправки почты -->
-<?php
-      if (!empty( $_POST['phone'])) {
-         $phone =  sprintf("Телефон: %s;\n", $_POST['phone']);
-  $contactName = sprintf("ФИО: %s;\n", $_POST['contactName']);
-  $date = sprintf("Дата: %s,\n", $_POST['date']);
-  $service = sprintf("Отделение: %s;\n", $_POST['service']);
-  $specialist = sprintf("Врач: %s;\n", $_POST['specialist']);
-  $message = sprintf("Дополнительно: %s", $_POST['message']);
-        wp_mail(
-          // "reception@appolo.com",
-          'mirfaizievoleg@gmail.com',
-          "новая запись на прием",
-          $contactName.$phone.$date. $service.$specialist.$message
-        );
-      }
-    ?>
-
 <?php
 
 /**
@@ -29,18 +11,9 @@
  */
 ?>
 <!DOCTYPE html>
-<!--[if IE 6]>
-<html id="ie6" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 7]>
-<html id="ie7" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 8]>
-<html id="ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if !(IE 6) & !(IE 7) & !(IE 8)]><!-->
+
 <html <?php language_attributes(); ?>>
-<!--<![endif]-->
+
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
@@ -67,11 +40,8 @@
 	</title>
 
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<!-- <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" /> -->
 	<link rel="pingback" href="<?php echo  get_stylesheet_directory_uri(); ?>>" />
-<!--[if lt IE 9]>
-<script src="<?php echo  get_stylesheet_directory_uri(); ?>/assets/js/html5.js" type="text/javascript"></script>
-<![endif]-->
+
 <?php
 	/*
 	 * We add some JavaScript to pages with the comment form
@@ -101,101 +71,28 @@
 
 		<div class="header">
 
-			<div class="row bg-dark" >
-				<div class="col-sm-5 text-light">
-					<i class="fa fa-phone" aria-hidden="true"></i>
-					+38 (050) 123-4567 
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-					7/24 экстренная помощь
-				</div>
-				
-				<div class="col text-light" align = "right">
-					<a href="" class="text-light bg-dark"><i class="fa fa-vk" aria-hidden="true"></i></a>
-					<a href="" class="text-light bg-dark"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-					<a href="" class="text-light bg-dark"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-					<a href="" class="text-light bg-dark"><i class="fa fa-google" aria-hidden="true"></i></a>
-				</div>
-			</div> 
-
 			<div class="row">
-				<div class="col-md-3" ><img src="<?php echo  get_stylesheet_directory_uri(); ?>/images/logo_apollo.png" class="img-fluid" alt="" width="30%" alt="Responsive image"></div>
-				
-				<div class="col-md-9">
-					<div class="row" align = "right">
-						<div class="col-sm-8">
-							<p align = "right">
-								<br>
-								<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#exampleModalCenter">Записаться на прием</button>
-							</p>
-						</div>
-
-
-            
-
-  				<!-- Modal -->
-  				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  					<div class="modal-dialog modal-dialog-centered" role="document">
-  						<div class="modal-content">
-  							<div class="modal-header">
-  								<h5 class="modal-title" id="exampleModalLongTitle">Записаться на прием</h5>
-  								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-  									<span aria-hidden="true">&times;</span>
-  								</button>
-  							</div>
-  							<div class="modal-body">
-
-
-                  <!-- Твой старый вариант -->
-                  <form method="POST" action="/"> 
-                    <div class="row">
-                      <div class="col-4">
-                        <p class="text-left">Фамилия И.О.*: </p>
-                        <p class="text-left">Ваш телефон*: </p>
-                        <p class="text-left">Дата посещения*:</p>
-                        <p class="text-left">В какое отделение:</p>
-                        <p class="text-left">К какому Специалисту:</p> 
-                      </div>
-
-                      <div class="col">
-                        <p class="text-left"><input type="text" name="contactName" required="true" /></p>
-                        <p class="text-left"><input type="text" name="phone" required="true" /></p>
-                        <p class="text-left"><input type="text" name="date" /></p>
-                        <p class="text-left"><input type="text" name="service"/></p>
-                        <p class="text-left"><input type="text" name="specialist" ></p>
-                      </div>
-                  </div>
-
-                  <p class="text-left">Дополнительная информация: <textarea name="message" ?"></textarea></p>
-                   
-                    <input type="submit" />
-
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
-                  </form>
-
-
-
-                                   
-
-               
-
-              </div>
-
-
-            </div>
-          </div>
+				<div class="col-md-3" ><br><img src="<?php echo  get_stylesheet_directory_uri(); ?>/images/logo_apollo.png" class="img-fluid" alt="Responsive image">
         </div>
+				
+				
+					
 
-
-        <div class="col-sm-4" >
-         <p>
-          +38 (044) 123-4567 <br>
-          +38 (050) 123-4567 <br>
-          +38 (067) 123-4567 <br>						
-        </p>	
-      </div>
-    </div> <!-- class = "row" -->
-  </div>
-</div>
+            <div class="col-md-9" ><br>
+              <h1 class ="text-primary text-right font-weight-bold" >ЛІКУВАЛЬНО-ДІАГНОСТИЧНИЙ ЦЕНТР «АПОЛЛО»</h1><br>
+              <p class = "text-right">
+                Ліцензія МОЗ серія АГ №570585.<br>
+                ул. Старовокзальна, 17, м. Київ, 01032.<br>
+                тел./факс: +38(044) 235-7829,<br>
+                +38(044) 236-7959.<br>                
+                e-mail:  med@apollo.kiev.ua,<br>
+                ldc@apollo.kiev.ua.<br>      <br>
+                Режим роботи: пн.-пт. з 8-00 год. до 20-00 год.          
+              </p>
+            </div>
+           
+       
+      </div><!-- row --> 
 
 
 <div class="row" >
@@ -242,10 +139,10 @@
 ) ); ?>
 
 
-<h3 class = 'main-nav-search'>ПОИСК</h3>
-<form method="get" id="searchform" action="http://localhost/">
+
+<form method="get" id="searchform" action="/">
  <label for="s" class="assistive-text">Search</label>
- <input class="field" name="s" id="s" placeholder="Поиск" type="text">
+ <input class="field" name="s" id="s" placeholder="Поиск по сайту" type="text">
  <input class="submit" name="submit" id="searchsubmit" value="Поиск" type="submit">
 </form>
 </nav>

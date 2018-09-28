@@ -17,6 +17,7 @@ body {
   background: #fff;
 }
 
+
 #supplementary {
   padding-top: 1.625em;
   padding-right: 5.6%;
@@ -30,6 +31,10 @@ body {
   margin-top: 0;
   margin-left: 0;
   margin-right: 0;
+}
+
+.row h1{
+  font-size: 150%;
 }
 
 .nav-item > a {
@@ -55,7 +60,7 @@ body {
 }
 
 ul.sub-menu {
-  display: none;
+  display: none;  
 }
 
 ul.navbar-nav li:hover > ul.sub-menu {
@@ -92,4 +97,14 @@ li.current-menu-item a{
 
 .main-nav-search {
   color: #fff;
+}
+
+#secondary {
+    float: right;
+    margin-right: 1.6%;
+    width: 24.8%;
+}
+
+.widget-title{
+  text-align: center;
 }

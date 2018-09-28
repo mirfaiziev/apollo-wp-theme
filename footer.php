@@ -30,26 +30,28 @@
 
 				<div id = "supplementary" class="col">
 					
-					<h3 class = "widget-title text-light">Наши реквизиты</h3>
+					<h3 class = "widget-title text-light">Наші реквізити</h3>
 					<p class = "text-light">Україна,
-						м.Київ, 01234,<br>
-						вул. Старовокзальна, 17
-						<br>
-					тел. 502-34-62</p>
-					<p class = "text-light">e-mail: info@apollo.kiev.ua</p>
-				</div>
+						ул. Старовокзальна, 17, <br>
+						м. Київ, 01032
+					</p>
+					
+						<p class = "text-light "> e-mail: <br>
+							med@apollo.kiev.ua,<br>
+							ldc@apollo.kiev.ua
+						</p>
+					</div>
 
 				<div id = "supplementary" class="col">
 					<h3 class=" widget-title text-light ">Работа с клиентами</h3>
-					<p class = "text-light"> +38 (044) 123-4567 <br>
-						+38 (050) 123-4567 <br>
-						+38 (067) 123-4567 <br>	
-					</p>
+					<p class = "text-light ">	
+						тел./факс:<br> 
+						+38(044) 235-7829,<br>
+						+38(044) 236-7959.</p>
+						<p class = "text-light ">
+							пн.-пт. з 8-00 год. до 20-00 год.
+						</p>				
 						
-						<a href="" class="text-light "><i class="fa fa-vk" aria-hidden="true"></i></a>
-						<a href="" class="text-light "><i class="fa fa-facebook" aria-hidden="true"></i></a>
-						<a href="" class="text-light "><i class="fa fa-twitter" aria-hidden="true"></i></a>
-						<a href="" class="text-light "><i class="fa fa-google" aria-hidden="true"></i></a>
 				</div>
 				
 			</div><!-- #page -->
