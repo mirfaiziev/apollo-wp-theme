@@ -13,8 +13,8 @@ Version:        0.1
 
 /* my css
 ------------------------------------------------*/
-body {
-  background: #fff;
+#access {
+background: -webkit-linear-gradient(top, #0085ba, #13499f);
 }
 
 
